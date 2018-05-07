@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!-- инлайновый javascript код внутри html файла,
+    чтобы не морочиться над тестовым стендом -->
+    <script type="text/javascript">
+
+        // IIFE, чтобы не работать в глобальной области видимости
+        (function () {
+
+            // Пример массива, который нужно отсортировать
+            var arrayExample = [10, 5, 7, 2, 13, -1, 0, 0, 6, 666];
+            console.log('input', arrayExample);
+
+            // Метод сортировки
+            // TODO: переписать на кастомную сортировку
+            function customSort(inputArray) {
+
+                // см. описание метода на https://learn.javascript.ru/array-methods
+                function compareNumeric(a, b) {
+                    if (a > b) return 1;
+                    if (a < b) return -1;
+                }
+
+                // Защита от пустого объекта,
+                inputArray = inputArray || [];
+
+                // Сортируем и сразу отдаём результат
+                return inputArray.sort(compareNumeric);
+            }
+
+            // Вывод результата
+            var result = customSort(arrayExample);
+            console.log('output', result);
+
+        })();
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
